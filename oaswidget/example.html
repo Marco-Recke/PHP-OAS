@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+
+        <script src="./includes/vendor/jquery-1.11.1.min.js"></script>
+        <script src="./includes/vendor/raphael-min.js"></script>
+        <script src="./includes/vendor/jquery-ui/jquery-ui.min.js"></script>
+        <script src="./includes/vendor/morris.min.js"></script>
+        <script src="./includes/vendor/datepicker-de.js"></script>
+        <script src="./includes/oaswidget.js"></script>
+        <script src="./includes/oaswidget-de.js"></script>
+
+        <link rel="stylesheet" href="./includes/vendor/jquery-ui/jquery-ui.min.css">
+        <link rel="stylesheet" href="./includes/vendor/morris.css">
+        <link rel="stylesheet" href="./includes/oaswidget.css">
+
+        <script>
+        //When document is ready, start loading the oas-graph with these options
+        $(document).ready(function() { $( "#content ").chart({
+            identifier: "", // fill in specific identifier
+//            granularity: "month",
+//            until: "yesterday",
+//            interval: 6,
+//            showCounter: true,
+//            showCounterAbstract: true,
+//            showRobots: false,
+//            showRobotsAbstract: false,
+//            showToolbar: true,
+//            showToolbarDateSelector: true,
+//            showToolbarDetails: false,
+//            showToolbarCumulated: true,
+//            showWaitingAnimation: true,
+//
+//            toolbarDateSelectorOptions: {
+//                granularityEditable:    true,  //enable the edit-box
+//                timespanEditable:       true   //enable from-until
+//            },
+//            toolbarDetailsOptions: {
+//                    showIdentifier: true,
+//                    showFirstAccess: true
+//            },
+//            toolbarCumulatedOptions: {
+//                statisticsToggleable: true,
+//                showAll: false
+//            },
+//            morrisOptions: {
+//            }
+        } );
+    });
+
+        </script>
+
+        <title>Open-Access-Statistik Barchart-Test</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="content" style="height:240px; width:800px;"></div>
+    </body>
+</html>

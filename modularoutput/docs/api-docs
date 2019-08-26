@@ -1,0 +1,25 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "apis": [
+    {
+      "path": "/reports",
+      "description": "Retrieve usage statistics reports"
+    },
+    {
+      "path": "/status",
+      "description": "Retrieve some status informations"
+    },
+    {
+      "path": "/robots",
+      "description": "Retrieve a list with all robots which are filtered"
+    }
+
+  ],
+
+  "info": {
+    "title": "Open Access Statistics API Documentation",
+    "description": "This is the API documentation for retrieving usage statistics from the OAS service.",
+    "contact": "oas@gbv.de"
+  }
+}

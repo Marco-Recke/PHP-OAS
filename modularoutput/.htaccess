@@ -1,0 +1,13 @@
+# Turn on the rewrite engine
+Options +FollowSymlinks
+RewriteEngine on
+
+# Rewrites all URLs in format reports/[data].[format] to index.php?do=[data]&format=[format]
+RewriteRule ^reports/([a-zA-Z1-9_-]*)\.([a-zA-Z_-]*)?$ index.php?do=$1&format=$2 [NC,QSA,L]
+
+RewriteRule ^robots\.([a-zA-Z_-]*)?$ index.php?do=robots&format=$1 [NC,QSA,L]
+
+
+RewriteRule ^docs/api-docs/reports$ docs/reports [NC,QSA,L]
+RewriteRule ^docs/api-docs/status$ docs/status [NC,QSA,L]
+RewriteRule ^docs/api-docs/robots$ docs/robots [NC,QSA,L]

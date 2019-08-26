@@ -1,0 +1,21 @@
+# always show captions for orientation
+# caption always "%n: %t"
+
+# log output to file
+# logfile "monitor_%n_%t.log"
+
+# start sessions
+# screen -t SHELL_UNLOGGED 1
+
+# screen -L -t PARSER-1			./service-provider.php -c parse -k
+# screen -L -t PARSER-2			./service-provider.php -c parse -k
+
+# Econstor, can only be harvested in day intervals
+# screen -L -t HARVEST-4-ECONSTOR	./service-provider.php -c harvest -i 4 -w P1D
+
+# Qucosa, every 10 minutes
+# screen -L -t HARVEST-6-QUCOSA	./service-provider.php -c harvest -i 6 -w PT10M
+
+# HU Berlin, every 10 minutes
+# screen -L -t HARVEST-7-HU_B		./service-provider.php -c harvest -i 7 -w PT10M
+

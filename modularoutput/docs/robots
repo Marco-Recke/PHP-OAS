@@ -1,0 +1,25 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/api/v1",
+  "resourcePath": "/",
+  "apis": [
+    {
+      "path": "/robots.json",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Retrieve a list with robots user agents whicht are filtered.",
+          "notes": "This returns a list with regular expressions of user-agents which are used to filter the data.",
+          "nickname": "getRobotsData",
+          "authorizations": {},
+          "parameters": [
+          ],
+          "responseMessages": [
+          ]
+        }
+
+      ]
+    }
+  ]
+}

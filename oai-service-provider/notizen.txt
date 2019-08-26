@@ -1,0 +1,4 @@
+- MySQL-Konfiguration:
+  max_allowed_packet muss groß genug sein, um die Datenmenge zu halten,
+     die in einer OAI-Antwort maximal zu erwarten ist.
+

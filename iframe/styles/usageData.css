@@ -1,0 +1,129 @@
+.chartbox {
+/*	position: absolute;*/
+/*	width: 548px;*/
+/*	height: 368px;*/
+/*	z-index: 99;*/
+	border: 1px solid #aaa;
+	background: #fff;
+	color: #000;
+}
+.chartbox * {
+    text-align: left;
+}
+.close {
+	margin: -26px 4px 4px 4px;
+	float: right;
+	width: 16px;
+	height: 16px;
+	background: url('../images/btn_close.png') top left no-repeat;
+	position: relative;
+}
+.close:hover {
+	background-position: -16px;
+}
+.chartbox #chart {
+	position: absolute;
+}
+.chartbox p {
+	margin: 8pt 0 !important;
+	line-height: 1.5 !important;
+}
+.chartbox p a {
+	margin: 4px;
+}
+.chartbox h1 {
+	color: #333;
+	font-weight: bold;
+	margin: 0;
+	padding: 0 4px 4px 30px;
+	height: 19px;
+	font-size: 13px;
+	background: #ddd url('../images/icons/chart_bar.png') 8px 4px no-repeat;
+	border-bottom: 1px solid #aaa;
+}
+.chartbox a {
+    text-decoration: none;
+}
+.chartbox a:hover {
+	text-decoration: underline;
+}
+.chartbox .standards a {
+	background: #bbb;
+	padding: 4px 8px !important;
+	border: 0 !important;
+	color: #000;
+}
+.chartbox .standards a.active {
+	background: #fff;
+}
+.chartbox .submenu a.active {
+	color: #fff !important;
+	background: #2f5fbf;
+}
+.chartbox .submenu {
+	position: relative;
+	margin-top: 300px;
+}
+.chartbox .submenu p {
+	padding-left: 30px;
+	background: 8px 0 no-repeat;
+}
+.chartbox p.period {
+	background-image: url('../images/icons/time.png');
+}
+.chartbox p.source {
+	background-image: url('../images/icons/report.png');
+}
+.chartbox .foot {
+	background: #ddd;
+/*	position: absolute;*/
+/*	bottom: 0;*/
+/*	width: 100%;*/
+	padding: 8px 0;
+	border-top: 1px solid #aaa;
+}
+.chartbox .foot a {
+	margin: 0 !important;
+	color: #666;
+}
+.chartbox .submenu a {
+    color: #2f5fbf;
+    padding: 3pt !important;
+}
+.chartbox .foot p {
+    padding: 0 8px 0;
+    display: none;
+}
+.chartbox a.info {
+	background-image: url('../images/icons/information.png') !important;
+	padding-left: 30px;
+	background: 8px 0 no-repeat;
+}
+.chartbox .submenu a.plus {
+	padding-left: 16px !important;
+	background: url('../images/icons/bullet_add.png') center left no-repeat;
+}
+p.small {
+	font-size: .75em;
+}
+a:visited {
+    color: #2f5fbf;
+}
+table {
+    display: none;
+}
+a[href^="http:"] {
+	padding-left: 12px !important;
+	background: url('../images/icons/external_link.png') center left no-repeat !important;
+}
+p.error {
+    color: #a00;
+    font-weight: bold;
+    padding-left: 20px !important;
+    background: url('../images/icons/error.png') center left no-repeat;
+}
+p.hint {
+    font-weight: bold;
+    padding-left: 20px !important;
+    background: url('../images/icons/lightbulb.png') center left no-repeat;
+}

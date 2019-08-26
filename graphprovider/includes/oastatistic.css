@@ -1,0 +1,139 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25.08.2014, 17:48:13
+    Author     : giesmann
+*/
+
+/*Decrease size if datepicker widget */
+.ui-widget { font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif; font-size: .9em; }
+
+/*Decrease z-index to prevent the morris hover to overlay the datepicker */
+.morris-hover {
+    position: absolute;
+    z-index: 1;
+}
+
+#oascontent, .oastatistics {
+    position: relative;
+}
+
+#oastoolbarbtndown {
+    width:20px;
+    background-image: url(./pictures/arrowdown.gif);
+    background-repeat:no-repeat; 
+    background-position:center bottom;
+    padding: 0px;
+}
+
+#oastoolbarbtnup {
+    position: absolute;
+    height:20px;
+    width:20px;
+    
+    bottom:1px;
+    left: 5px;
+    background-image: url(./pictures/arrowup.gif);
+    background-repeat:no-repeat; 
+    background-position:center;
+}
+
+#oasgraph {
+    height:200px;
+    background-color: whitesmoke;  
+    background-image: url(./pictures/logominialpha2.png);
+    background-repeat:no-repeat; 
+    background-position:center;
+}
+
+#oasmessage {
+    position: absolute;
+    top:40%;
+    left:47%;
+}
+
+#oasconfigcontainer {
+    position: absolute;
+    background-color: #e6e6e6;
+    border-color: lightgray;
+    height: 70%;
+    bottom: 0;
+    display:none;
+    z-index: 2;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow:auto;
+    float: left;
+    padding-left:  5px;
+    padding-right:  5px;
+}
+
+.oasconfigbox {
+    position: relative;
+    //display: inline-block;
+    margin-top: 35px;
+    //width: ;
+    height: inherit;
+    font-size: small;
+    font-family: sans-serif;
+    float: left;
+    padding-right: 10px;
+    padding-left: 15px;
+    border-left: 1px dotted #aaaaaa;
+    //overflow: auto;
+}
+
+
+.oasconfigbox span{
+    left: 5px;
+    top: -20px;
+    position: absolute;
+    color: royalblue;
+    border-bottom: 1px solid darkblue;
+}
+
+.oasconfigbox:first-of-type {
+    margin-left: 0px;
+    border-left: none;
+}
+
+/*#oasconfiginfo {
+    position: relative;
+    border: #1c94c4;
+}*/
+
+.oas-control-group {
+    clear: both;
+    margin-top: 1px;
+    display: inline-block;
+    float: left;
+    border-bottom: 2px solid #eeeeee;
+    padding: 1px;
+}
+
+.oasconfigbox .oas-control-group:last-of-type {
+    border-bottom: none;
+}
+
+.oas-control-group input {
+    width: 6em;
+}
+
+.oas-control-group-label {
+    width: 8em;
+    display: inline-block;
+    float: left;
+}
+
+.oas-control-group-content {
+    display: inline-block;
+    float: right;
+}
+
+.oas_clickable:hover {
+    cursor:pointer;
+    background-color: snow;
+}

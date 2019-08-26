@@ -1,0 +1,25 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/api/v1",
+  "resourcePath": "/reports",
+  "apis": [
+    {
+      "path": "/reports/status.json",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Retrieve some status informations.",
+          "notes": "This returns some status data about your repository and about processes in the OAS-Service Provider which may or may not be interesting to you.",
+          "nickname": "getStatusData",
+          "authorizations": {},
+          "parameters": [
+          ],
+          "responseMessages": [
+          ]
+        }
+
+      ]
+    }
+  ]
+}

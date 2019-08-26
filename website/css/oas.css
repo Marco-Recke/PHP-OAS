@@ -1,0 +1,84 @@
+/* colors:
+	gbv background color: #5880c0;
+*/
+
+/* overwrite sidebar active color from dashboard.css*/
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #5880c0;
+}
+
+.smalltablewidth {
+  width: 300px;
+}
+
+.mediumtablewidth {
+  width: 350px;
+}
+
+iframe {
+	border: none;
+	height: 300px;
+	width: 100%;
+}
+
+.brand {
+  padding: 3px 3px;
+}
+
+.nobottommargin {
+  margin-bottom: 0px;
+}
+
+/* collapsed sidebar styles */
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    /*left: -41.6%;*/
+    left: -45%;
+  }
+
+  .row-offcanvas-left.active {
+    /*left: 41.6%;*/
+    left: 45%;
+  }
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 42%;
+  }
+}
+
+/* swagger api-doc specific overwrite */
+.swagger-section .swagger-ui-wrap {
+  max-width: none;
+}
+
+/* swagger api-doc specific overwrite */
+#resources_container {
+  width: auto;
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
+
+@media (min-width: 768px) {
+  .navbar-header {
+    float: none;
+  }
+}
+
+.navbar-brand-second {
+  float: right;
+  height: 50px;
+  position: relative;
+}

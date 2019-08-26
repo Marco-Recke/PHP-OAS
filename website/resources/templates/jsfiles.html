@@ -1,0 +1,107 @@
+    <!-- generic javascript includes -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/bootstrap-table.min.js"></script>
+    <script src="js/vendor/bootstrap-table-de-DE.js"></script>
+
+    <!-- oas-graph-widget specific-->
+    <!--<script src="resources/oaswidget/vendor/jquery-1.11.1.min.js"></script>-->
+    <script src="resources/oaswidget/includes/vendor/raphael-min.js"></script>
+    <script src="resources/oaswidget/includes/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="resources/oaswidget/includes/vendor/morris.min.js"></script>
+    <script src="resources/oaswidget/includes/vendor/datepicker-de.js"></script>
+    <script src="resources/oaswidget/includes/oaswidget.js"></script>
+    <script src="resources/oaswidget/includes/oaswidget-de.js"></script>
+
+    <!-- <script src="js/oas.js"></script> -->
+
+    <!-- define all dynamic variables for easier use in javascripts -->
+    <script>
+      var CURRENT_REP         = <?php echo json_encode($_SESSION['currentrep']) ?>;
+      var API_PATH            = <?php echo json_encode(API_PATH) ?>;
+      var GRAPHPROVIDER_URL   = <?php echo json_encode(GRAPHPROVIDER_URL) ?>;
+      var API_DOCS_PATH       = <?php echo json_encode(APIDOC_URL) ?>;
+
+// loads overview table
+function loadTable(id) {
+  // we add the id if necessary (for admin purposes)
+  if(id == 0) {
+    requestString = '';
+  } else {
+    requestString = '&id=' + id;
+  }
+  // create a table
+  $('#info-table').bootstrapTable({
+    url: API_PATH + 'index.php?do=status' + requestString,
+    responseHandler: function(res) {
+      var overviewData = [
+        {
+          key: 'Identifier-Anzahl',
+          value: res.count_identifiers
+        },
+        {
+          key: 'Dokumentenaufrufe (gesamt)',
+          value: res.counter
+        },
+        {
+          key: 'Abstract-Views (gesamt)',
+          value: res.counter_abstract
+        }
+      ];
+      repData = res;
+      return overviewData;
+    },
+    cache: true,
+    showHeader: false,
+    striped: true,
+    columns: [{
+        field: 'key'
+      },
+      {
+        field: 'value'
+      }
+    ]
+  });
+}
+
+// bootstrap-table function - shows stats icon in every row
+function operateFormatter(value, row, index) {
+        return [
+            '<a class="showGraph" href="javascript:void(0)" title="Graph">',
+                '<i class="glyphicon glyphicon-stats"></i>',
+            '</a>',
+        ].join('');
+}
+
+// logout via javascript
+function logout() {
+  var xmlhttp;
+    if (window.XMLHttpRequest) {
+        xmlhttp = new XMLHttpRequest();
+    }
+  // code for IE
+  else if (window.ActiveXObject) {
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  if (window.ActiveXObject) {
+    // IE clear HTTP Authentication
+    document.execCommand("ClearAuthenticationCache");
+    window.location.href="index.php";
+  } else {
+    xmlhttp.open("GET", "index.php", true, "logout", "logout");
+    xmlhttp.send("");
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4) {window.location.href="index.php";}
+    }
+  }
+}
+
+// necessary for responsive behaviour on every page
+$(document).ready(function() {
+  $('[data-toggle=offcanvas]').click(function() {
+    $('.row-offcanvas').toggleClass('active');
+  });
+});
+
+</script>
+

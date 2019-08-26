@@ -1,0 +1,141 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "/api/v1",
+  "resourcePath": "/reports",
+  "apis": [
+    {
+      "path": "/reports/basic.{formatExtension}",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Retrieve a basic usage statistics report.",
+          "notes": "This returns a basic usage statistics report in JSON, CSV or XML format.<br /> You can run it without parameters, in this case server-side default values are used (see descriptions for the default values).",
+          "nickname": "getUsageData",
+          "authorizations": {},
+          "parameters": [
+            {
+              "name": "formatExtension",
+              "description": "the format of the report (attention: given that usually lots of data sets are returned, xml might be pretty slow. Recommended format is json.)",
+              "required": true,
+              "type": "string",
+              "paramType": "path",
+              "enum": [
+                "json",
+                "csv",
+                "xml"
+              ]
+            },
+            {
+              "name": "identifier",
+              "description": "an identifier, or a range of identifiers (<prefix>%) (default: yourprefix:%)",
+              "required": false,
+              "type": "string",
+              "paramType": "query"
+            },
+            {
+              "name": "from",
+              "description": "start date, e.g. 2014-01-01 or even '-10 days' (default: -3 days)",
+              "required": false,
+              "type": "dateTime",
+              "paramType": "query"
+            },
+            {
+              "name": "until",
+              "description": "end date, e.g. 2014-01-01 or even '-10 days' (default: -3 days)",
+              "required": false,
+              "type": "dateTime",
+              "paramType": "query"
+            },
+            {
+              "name": "granularity",
+              "description": "the granularity for the returned data (default: day). note: requested start and end dates will be shifted if necessary. E.g. granularity: month; a start date in the middle of the month will be replaced by the first of the month. further: granularity 'total' will return the date on which the file was first accessed.",
+              "required": false,
+              "type": "string",
+              "enum": [
+                "day",
+                "week",
+                "month",
+                "year",
+                "total"
+              ],
+              "allowMultiple": false,
+              "paramType": "query"
+            },
+            {
+              "name": "content",
+              "description": "the content. Multiple possible (default: counter).",
+              "required": false,
+              "type": "string",
+              "enum": [
+                "counter",
+                "counter_abstract",
+                "robots",
+                "robots_abstract"
+              ],
+              "allowMultiple": true,
+              "paramType": "query"
+            },
+            {
+              "name": "classification",
+              "description": "the classification. If you return specific classifications for data accesses, only those from the given classification(s) are returned. Multiple possible (default: all).",
+              "required": false,
+              "type": "string",
+              "enum": [
+                "none",
+                "administrative",
+                "institutional",
+                "all"
+              ],
+              "allowMultiple": true,
+              "paramType": "query"
+            },
+            {
+              "name": "addemptyrecords",
+              "description": "adds entries filled with 0 for datasets with no usage data. useful e.g. for graphical representation of the data.",
+              "required": false,
+              "type": "boolean",
+              "paramType": "query"
+            },
+            {
+              "name": "summarized",
+              "description": "if set to true, summarized usage statistics for all given identifiers instead of every single identifier are returned. note: only useful for a range of identifiers (<prefix>%)",
+              "required": false,
+              "type": "boolean",
+              "paramType": "query"
+            },
+            {
+              "name": "informational",
+              "description": "shows informational data like total accesses and the first-accesses. note: only useful for a single identifier and only shown in JSON format",
+              "required": false,
+              "type": "boolean",
+              "paramType": "query"
+            },
+            {
+              "name": "jsonheader",
+              "description": "if set to false, no informations in the json headers are displayed. (default: true) note: only functional/useful when using JSON format",
+              "required": false,
+              "type": "boolean",
+              "paramType": "query"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 204,
+              "message": "no content"
+            },
+            {
+              "code": 400,
+              "message": "wrong parameter. See body for more info."
+            },
+            {
+              "code": 500,
+              "message": "other (internal) error."
+            }
+          ]
+        }
+
+      ]
+    }
+  ]
+}
